@@ -1,8 +1,8 @@
-variable "xs_storage_pool" {
-    type = object({
-        name = string
-    })
-}
+#variable "xs_storage_pool" {
+#    type = object({
+#        name = string
+#    })
+#}
 
 variable "xs_network" {
     type = object({

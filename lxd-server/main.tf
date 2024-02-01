@@ -1,8 +1,8 @@
 #Storage pools
-resource "lxd_storage_pool" "xs_storage_pool" {
-    name = var.xs_storage_pool.name
-    driver = "zfs"
-}
+#resource "lxd_storage_pool" "xs_storage_pool" {
+#    name = var.xs_storage_pool.name
+#    driver = "zfs"
+#}
 
 #Networks
 resource "lxd_network" "xs_network" {
@@ -17,9 +17,9 @@ resource "lxd_network" "xs_network" {
 
 #Profiles
 resource "lxd_profile" "xs_profiles" {
-    depends_on = [
-        lxd_storage_pool.xs_storage_pool
-    ]
+    #depends_on = [
+    #    lxd_storage_pool.xs_storage_pool
+    #]
 
     for_each = {
         for index, profile in var.xs_profiles :
@@ -34,15 +34,15 @@ resource "lxd_profile" "xs_profiles" {
         "limits.memory" = each.value.memory
     }
 
-    device {
-        type = "disk"
-        name = "root"
-
-        properties = {
-            pool = var.xs_storage_pool.name
-            path = "/"
-        }
-    }
+    #device {
+    #    type = "disk"
+    #    name = "root"
+#
+    #    properties = {
+    #        pool = var.xs_storage_pool.name
+    #        path = "/"
+    #    }
+    #}
 }
 
 #Containers
