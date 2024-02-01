@@ -11,8 +11,8 @@ provider "lxd" {
     accept_remote_certificate = true
 }
 
-resource "lxd_container" "lxd_container_test_ubuntu" {
-    name = "test_ubuntu"
+resource "lxd_container" "lxd_container_testubuntu" {
+    name = "testubuntu"
     image = "ubuntu:22.04"
 
     config = {
