@@ -28,7 +28,7 @@ variable "xs_image" {
 }
 
 variable "xs_containers" {
-    type list(object({
+    type = list(object({
         name = string
         profile = string
         ip = string
