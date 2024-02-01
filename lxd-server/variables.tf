@@ -1,5 +1,5 @@
 variable "xs_storage_pool" {
-    type = object ({
+    type = object({
         name = string
     })
 }
